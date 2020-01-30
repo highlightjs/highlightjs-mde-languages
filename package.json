@@ -1,0 +1,36 @@
+{
+  "name": "highlightjs-mde-languages",
+  "version": "0.1.0",
+  "description": "highlight.js syntax definition for MDE languages",
+  "main": "src/mde-languages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:bundle": "browserify ./src/mde-languages.js | uglifyjs -mc > ./build/mde-languages.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/highlightjs/highlightjs-mde-languages.git"
+  },
+  "keywords": [
+    "atl",
+    "ecore",
+    "ocl",
+    "highlight.js",
+    "highlightjs",
+    "syntax"
+  ],
+  "author": "Gerson Sunyé <sunye@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/highlightjs/highlightjs-mde-languages/issues"
+  },
+  "homepage": "https://github.com/highlightjs/highlightjs-mde-languages",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "uglify-js": "^3.7.6",
+    "uglifyjs": "^2.4.11"
+  }
+}

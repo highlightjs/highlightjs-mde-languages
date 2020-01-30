@@ -1,0 +1,21 @@
+= Highlight.js Grammars for MDE languages
+
+== Provided grammars
+
+* https://www.eclipse.org/atl/[ATL]
+* https://www.omg.org/spec/OCL/[OCL]
+* https://wiki.eclipse.org/Xcore[Xcore]
+
+== Usage 
+
+Include the Highlight.js library in your webpage or Node app, then load this module.
+
+[source,html]
+----
+<script type="text/javascript" src="/path/to/highlight.min.js"></script>
+<script type="text/javascript" charset="UTF-8"
+  src="/path/to/highlightjs-mde-languages/dist/mde-languages.min.js"></script>
+<script type="text/javascript">
+  hljs.initHighlightingOnLoad();
+</script>
+----
