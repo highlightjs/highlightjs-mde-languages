@@ -1,5 +1,7 @@
-module.exports = function(hljs) {
-    hljs.registerLanguage('atl', require('./atl'));
-    hljs.registerLanguage('ocl', require('./ocl'));
-    hljs.registerLanguage('xcore', require('./xcore'));
-};
+var hljsDefineOCL = require('./ocl')
+var hljsDefineATL = require('./atl')
+var hljsDefineXcore = require('./xcore')
+
+hljs.registerLanguage('ocl', hljsDefineOCL);
+hljs.registerLanguage('atl', hljsDefineATL);
+hljs.registerLanguage('xcore', hljsDefineXcore);

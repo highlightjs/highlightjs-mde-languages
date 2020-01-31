@@ -1,11 +1,11 @@
 module.exports = function(hljs) {
-  var TYPES = 'Boolean Integer UnlimitedNatural Real String OrderedSet Tuple OrderedSet Bag Set Sequence OclInvalid OclVoid TupleType OclState Collection OclMessage ';
+  var TYPES = 'Boolean Integer UnlimitedNatural Real String OrderedSet Tuple OrderedSet Bag Set Sequence OclInvalid OclVoid OclUndefined OclAny TupleType OclState Collection OclMessage ';
   return {
     case_insensitive: false,
     beginKeywords: 'module rule ',
     keywords: {
       keyword: 'module rule to from thisModule abstract query IN OUT extends helper def uses ' +
-        'create refining ' +
+        'create refining context ' +
         'select collect reject forAll exists collectNested closure iterate flatten one first ' +
         'includes excludes excludesAll includesAll including excluding union intersection ' +
         'size avg isEmpty notEmpty count sum average ' +

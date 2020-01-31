@@ -5,7 +5,7 @@
   "main": "src/mde-languages.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:bundle": "browserify ./src/mde-languages.js | uglifyjs -mc > ./build/mde-languages.min.js"
+    "build": "browserify ./src/mde-languages.js | uglifyjs -mc >  ./build/mde-languages.min.js"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,9 @@
     "browserify": "^16.5.0",
     "uglify-js": "^3.7.6",
     "uglifyjs": "^2.4.11"
+  },
+  "dependencies": {
+    "highlight.js": "^9.18.0",
+    "js-beautify": "^1.10.3"
   }
 }
