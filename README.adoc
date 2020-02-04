@@ -2,11 +2,17 @@
 
 == Provided grammars
 
-* https://www.eclipse.org/atl/[ATL]
-* https://www.omg.org/spec/OCL/[OCL]
-* https://wiki.eclipse.org/Xcore[Xcore]
+* https://www.eclipse.org/atl/[ATL] - Atlanmod Transformation Language
+* https://www.omg.org/spec/OCL/[OCL] - Object Constraint Language
+* https://wiki.eclipse.org/Xcore[Xcore] - Extended concrete syntax for https://www.eclipse.org/modeling/emf/[Ecore]
+
+== Download
+
+The _minified_ and _browserified_ pakage is available https://github.com/highlightjs/highlightjs-mde-languages/releases[here].
 
 == Usage 
+
+=== Web page or Node.js
 
 Include the Highlight.js library in your webpage or Node app, then load this module.
 
@@ -19,3 +25,55 @@ Include the Highlight.js library in your webpage or Node app, then load this mod
   hljs.initHighlightingOnLoad();
 </script>
 ----
+
+=== Reveal.js
+
+Using link:https://asciidoctor.org/docs/asciidoctor-revealjs/[Asciidoctor Reveal.js]
+
+First, set the `revealjs_plugins` attribute in the beginning of your Asciidoc document:
+
+[source,asciidoc]
+----
+:revealjs_plugins: revealjs-plugins.js
+----
+
+Second, create the `revealjs-plugins.js` file, next to your Asciidoc document (you can specify a different path, of you want):
+
+[source,js]
+----
+{src: 'mde-languages.min.js', async:true, callback: function() { hljs.initHighlightingOnLoad(); }}
+----
+
+*Asciidoctor Reveal.js* will add this line to the generated Reveal.js configuration,
+allowing it to load the highlighjs-mde grammars.
+
+Finally, compile your code and take a look at the generated html file.
+In the bottom, you should find the following lines:
+
+[source,js]
+----
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true },
+      {src: 'mde-languages.min.js', async:true, callback: function() { hljs.initHighlightingOnLoad(); }}
+  ],
+----
+
+As you see, *Asciidoctor Reveal.js* just adds the contents of the `revealjs-plugins.js`
+to Reveal.js list of dependencies.
+
+== Examples
+
+I use these grammars in the slides of my Model-driven Engineering course:
+
+* https://naomod.univ-nantes.io/mde/slides/#/[MDE] slides (https://gitlab.univ-nantes.fr/naomod/mde/slides[sources]).
+* https://sunye.github.io/ocl/#/[OCL] slides (https://github.com/sunye/ocl[sources]).
+
+== Local build
+
+. Use *npm* to install dependencies: `npm install`
+. Run the build script: `npm run build`
+. The packaged file (`mde-languages.min.js`) is placed in the build folder.
