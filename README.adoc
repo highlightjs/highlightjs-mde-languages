@@ -22,7 +22,7 @@ Include the Highlight.js library in your webpage or Node app, then load this mod
 <script type="text/javascript" charset="UTF-8"
   src="/path/to/highlightjs-mde-languages/dist/mde-languages.min.js"></script>
 <script type="text/javascript">
-  hljs.initHighlightingOnLoad();
+  hljs.highlightAll();
 </script>
 ----
 
